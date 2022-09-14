@@ -1,0 +1,655 @@
+
+#include<stdio.h>
+#include<string.h> 
+void menucall();
+struct login 
+{
+	char name[20];
+	char pass[20];
+}l1;
+main()
+{
+	char u[20],p[20];
+	int count=1;
+	
+	FILE *fp1;
+	fp1=fopen("sample1.txt","w");
+	
+	printf(" enter user name :\n\n ");
+	scanf("%s",l1.name);
+	
+	printf(" enter password :\n\n ");
+	scanf("%s",l1.pass);
+	
+	fprintf(fp1,"%s %s",l1.name,l1.pass);
+	printf(" registration done\n\n");
+	
+	fclose(fp1);
+	
+	printf(" Login Here\n\n");
+	printf("----------------------------\n");
+	do
+	{
+		
+	
+	printf("\nEnter User Name : ");
+	scanf("%s",u);
+	
+	printf("\nEnter Password : ");
+	scanf("%s",p);
+	
+	
+	//
+	
+	fp1=fopen("sample1.txt","r");
+	
+	fscanf(fp1,"%s %s",l1.name,l1.pass);
+//	printf("%s %s",l1.name,l1.pass);
+	
+	if(((strcmp(l1.name,u)==0))&&((strcmp(l1.pass,p)==0)))
+	{
+		printf(" Login Correct\n\n");
+		menucall();
+		break;
+	}
+	else
+	{
+		printf("\n Wrong Login\n\n");
+		count++;
+	}
+     printf("\n\nTry Again\t\n\n");
+	fclose(fp1);
+   }while(count<=3);
+  // printf("\n\nTRY AGAIN AFTER SOMETIME\n\n");
+   
+     
+}
+void menucall()
+{
+	int ch;
+	printf("1------COURSE DETAILS\n\n");
+	printf("2------UPDATE RECORD\n\n");
+	printf("3------DELETE RECORD\n\n");
+	printf("4------SHOW RECORD\n\n");
+	printf("5------GOTO LOGIN PAGE\n\n");
+	
+	printf("enter your choice\n\n");
+	scanf("%d",&ch);
+	switch(ch)
+	{
+		case 1: printf("COURSE DETAILS\n\n");
+		        printf("______________\n");
+		        int ch;
+		        printf("1-----JAVA\n");
+		        printf("2-----PHP\n");
+		        printf("3-----.NET\n");
+		        
+		        printf("ENTER YOUR CHOICE\n\n");
+		        scanf("%d",&ch);
+		        switch(ch)
+		        {
+		        	case 1:
+		        		   void javaadmission();
+		        		   char dh;
+		        		printf("*****java course detail******\n\n");
+		        		printf("fee = 300000\n\n");
+		        		printf("Topic = core java\n\n");
+		        		printf("most famous java framework to help maintaining and develop large java based application\n\n");
+		        		
+		        		printf("Do you want take admission press (yes/no)\n\n");
+		        		fflush(stdin);
+		        		scanf("%c",&dh);
+		        		fflush(stdin);
+		        		if(dh=='y'||dh=='Y')
+		        		{
+		        			javaadmission();
+						}
+						else
+						{
+							menucall();
+						}
+						break;
+		        	case 2:
+		        	    void phpadmission();
+					    char jo;
+					    printf("*****PHP course detail******\n\n");
+		        		printf("fee = 400000\n\n");
+		        		printf("\nTopic = data mining\n\n");
+		        		
+		        		printf("Do you want take admission press (yes/no)\n\n");
+		        		fflush(stdin);
+		        		scanf("%c",&jo);
+		        		fflush(stdin);
+		        		if(jo=='y'||jo=='Y')
+		        		{
+		        		  	phpadmission();
+						}
+						else
+						{
+							menucall();
+						}
+		        	        	break;
+		        	case 3:
+		        	    void netadmission();
+					    char nt;
+					    printf("*****.netcourse detail******\n\n");
+		        		printf("fee = 400000\n\n");
+		        		printf("Topic = data mining\n\n");
+		        		
+		        		printf("Do you want take admission press (yes/no)\n\n");
+		        		fflush(stdin);
+		        		scanf("%c",&nt);
+		        		fflush(stdin);
+		        		if(nt=='y'||nt=='Y')
+		        		{
+		        		  	netadmission();
+						}
+						else
+						{
+							menucall();
+						}
+		        	        	break;        	
+		       	}
+		case 2:
+		       printf("--------update recoard--------");
+			   char jp;
+			   int ch2;
+			   printf("1------update java record\n");
+			   printf("2------update php record\n");
+			   printf("3------update .net record\n");
+			   
+			   printf("enter your choice to update\n\n ");
+			   scanf("%d",&ch2);
+			   
+			   switch (ch2)
+			   {
+			   	 case 1:
+			   	 	void javaupdat();
+					 printf("do you want to update java deatil press y/n\n");
+					 fflush(stdin);
+					 scanf("%c",&jp);
+					 fflush(stdin);
+					 if((jp=='y')||(jp=='Y'))
+					 {
+					 	javaupdat();
+					 	
+					 }
+					 else
+					 {
+					 	break;
+					 }
+			   	 	 
+			   	 case 2:
+					void phpupdat();
+					 printf("do you want to update php deatil press y/n\n");
+					 fflush(stdin);
+					 scanf("%c",&jp);
+					 fflush(stdin);
+					 if((jp=='y')||(jp=='Y'))
+					 {
+					 	phpupdat();
+					 	
+					 }
+					 else
+					 {
+					 	break;
+					 }
+					 
+				case 3:
+				   void netupdat();
+					 printf("do you want to update php deatil press y/n\n");
+					 fflush(stdin);
+					 scanf("%c",&jp);
+					 fflush(stdin);
+					 if((jp=='y')||(jp=='Y'))
+					 {
+					 	netupdat();
+					 	
+					 }
+					 else
+					 {
+					 	break;
+					 }	  
+			   }
+			   
+			    	
+		case 3:
+			
+			printf("-----------Delete record----------\n\n");
+			char pj;
+			int choice1;
+			
+			printf("1-----java delete record\n");
+			printf("2------php delete record\n");
+			printf("3------.net delete record\n");
+			
+			printf("enter your choice to delete\n\n");
+			scanf("%d",&choice1);
+			switch(choice1)
+			{
+			  case 1:
+			         void javadelet();
+					 printf("do you want to delete java deatil press y/n\n");
+					 fflush(stdin);
+					 scanf("%c",&pj);
+					 fflush(stdin);
+					 if((pj=='y')||(pj=='Y'))
+					 {
+					 	javadelet();
+					 	
+					 }
+					 else
+					 {
+					 	menucall();
+					 	break;
+					 }
+				case 2:
+				     void phpdetel();	 
+				      printf("do you want to delete java deatil press y/n \n\n");
+				      fflush(stdin);
+					  scanf("%c",&pj);
+					  fflush(stdin);
+					 if((pj=='y')||(pj=='Y'))
+					 {
+					 	phpdetel();
+					 	
+					 }
+					 else
+					    menucall();
+					 	break;
+				case 3:
+				      void 	phpdelt();
+				       printf("do you want to delete java delete press y/n\n\n");
+				       fflush(stdin);
+					   scanf("%c",&pj);
+					   fflush(stdin);
+					 if((pj=='y')||(pj=='Y'))
+					 {
+					 	phpdelt();
+					 	
+					 }
+					 else
+					    menucall();
+					 	break;
+				      
+					 
+			}
+			
+		       	
+		case 4: 
+		    char op;
+		    FILE *fp;
+			char ch1;
+			fp=fopen("javaadmission.txt","r");
+			
+			if(NULL == fp)
+			{
+				printf("file can't be opened\n");
+			}
+			printf("student addmission detail are:-\n\n");
+			do
+			{
+				ch1=fgetc(fp);
+			    printf("%c",ch1);
+			}while(ch1!=EOF);
+			  fclose(fp);
+			  
+			  //new********php
+			 
+			 printf("-----------------------\n");
+			 
+			 FILE *fp1;
+			char cu;
+			fp1=fopen("phpadmission.txt","r");
+			
+			if(NULL == fp1)
+			{
+				printf("file can't be opened\n");
+			}
+			printf("student addmission detail are:-\n");
+			do
+			{
+				ch2=fgetc(fp1);
+			    printf("%c",ch2);
+			}while(ch2!=EOF);
+			  fclose(fp1);
+			  
+			  /////new...
+			  printf("----------------------");
+			  
+			  FILE *fp2;
+			char ch3;
+			fp2=fopen(".netadmission.txt","r");
+			
+			if(NULL == fp2)
+			{
+				printf("file can't be opened\n");
+			}
+			printf("student addmission detail are:-\n");
+			do
+			{
+				ch3=fgetc(fp2);
+			    printf("%c",ch3);
+			}while(ch3!=EOF);
+			  fclose(fp2);
+			  //print
+			  
+			  
+			  printf("do you want to continue or go home page press Y/N\n\n");
+			  fflush(stdin);
+			  scanf("%c",&op);
+			  fflush(stdin);
+			  if((op=='y')||(op=='Y'))
+			  {
+			  	menucall();
+			  }
+			  else
+			  {
+			  	break;
+			  }
+			  			 
+			 
+	   case 5:
+	   	
+	   	void func(struct login);
+   }
+}
+void javaadmission()	  
+{
+
+	char cho;
+	FILE *fp;
+	char name[50];
+	char pho[10];
+	char gmail[50];
+	char add[50];
+	 fp = fopen("javaadmission.txt","w+");
+	 if(fp == NULL)
+	 {
+	 	printf("File does not exists \n");
+	 }
+	 printf("java addmisson form \n\n\n");
+	 printf("Enter student name \n");
+	 scanf("%s",name);
+	 fprintf(fp,"Name = %s\n",name);
+		 
+	printf("Enter student phone number \n");
+	scanf("%s",pho);
+	fprintf(fp,"Phone number = %s\n",pho);
+	
+	printf("Enter student gmail \n");
+	 scanf("%s",gmail);
+	 fprintf(fp,"gmail = %s\n",gmail);
+	 
+	 printf("Enter student address \n");
+	 scanf("%s",add);
+	 fprintf(fp,"Address= %s\n",add);
+	 fclose(fp);
+	 printf("ADMISSION SUCCESSFULLY\n\n");
+	 printf("do you want to go home page press(yes/no)\n\n");
+	 fflush(stdin);
+	 scanf("%c",&cho);
+	 fflush(stdin);
+	 if(cho=='y'||cho=='Y')
+
+	 menucall();
+   
+}
+void phpadmission()
+{
+	char cho;
+	FILE *fp;
+	char name[50];
+	char pho[10];
+	char gmail[50];
+	char add[50];
+	 fp = fopen("phpadmission.txt","w+");
+	 if(fp == NULL)
+	 {
+	 	printf("File does not exists \n");
+	 }
+	 printf("php ");
+	 printf("Enter student name \n");
+	 scanf("%s",name);
+	 fprintf(fp,"Name = %s\n",name);
+		 
+	printf("Enter student phone number \n");
+	scanf("%s",pho);
+	fprintf(fp,"Phone number = %s\n",pho);
+	
+	printf("Enter student gmail \n");
+	 scanf("%s",gmail);
+	 fprintf(fp,"gmail = %s\n",gmail);
+	 
+	 printf("Enter student address \n");
+	 scanf("%s",add);
+	 fprintf(fp,"Address= %s\n",add);
+	 fclose(fp);
+	 printf("ADMISSION SUCCESSFULLY\n\n");
+	 printf("\ndo you want to go home page press(yes/no)");
+	 fflush(stdin);
+	 scanf("%c",&cho);
+	 fflush(stdin);
+	 if(cho=='y'||cho=='Y')
+
+	 menucall();
+}
+void netadmission()
+{
+	char cho;
+	FILE *fp;
+	char name[50];
+	char pho[10];
+	char gmail[50];
+	char add[50];
+	 fp = fopen(".netadmission.txt","w+");
+	 if(fp == NULL)
+	 {
+	 	printf("File does not exists \n");
+	 }
+	 printf(".net addmisson form \n\n\n");
+	 printf("Enter student name \n");
+	 scanf("%s",name);
+	 fprintf(fp,"Name = %s\n",name);
+		 
+	printf("Enter student phone number \n");
+	scanf("%s",pho);
+	fprintf(fp,"Phone number = %s\n",pho);
+	
+  	printf("Enter student gmail \n");
+	 scanf("%s",gmail);
+	 fprintf(fp,"gmail = %s\n",gmail);
+	 
+	 printf("Enter student address \n");
+	 scanf("%s",add);
+	 fprintf(fp,"Address= %s\n",add);
+	 fclose(fp);
+	 printf("ADMISSION SUCCESSFULLY\n");
+	 printf("do you want to go home page press(yes/no)\n\n");
+	 fflush(stdin);
+	 scanf("%c",&cho);
+	 fflush(stdin);
+	 if(cho=='y'||cho=='Y')
+
+	 menucall();
+
+}
+void javadelet()
+{
+	FILE *fp;
+	char name[30],phone[20],email[20];
+	
+	fp=fopen("javaadmission.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("Cannot open file\n");
+	}
+	printf(" Enter person name whose rec u want to delete\n\n");
+	scanf("%s",name);
+	
+	
+	while(fscanf(fp,"%s %s %lu",name,email,&phone)!=EOF)
+	{
+		if(strcmp(name,name)==0)
+		{
+				printf("RECORD FOUND");
+		
+			printf("%s%s%lu\n",name,email,phone);	
+		
+		
+				fp=fopen("javaadmission.txt","w");	
+				strcpy(name,"null");
+				strcpy(email,"null");
+				
+		fprintf(fp,"%s\n%s\n%lu\n",name,email,phone);
+		
+				printf("RECORD deleted");
+				
+			}
+			else
+			{
+				printf("REC  not found");
+			}
+		}
+		fclose(fp);
+	fclose(fp);
+}
+void phpdetel()
+{
+	FILE *fp;
+	char name[30],phone[20],email[20];
+	
+	fp=fopen("phpadmission.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("Cannot open file\n\n");
+	}
+	printf(" Enter person name whose rec u want to delete\n\n");
+	scanf("%s",name);
+	
+	
+	while(fscanf(fp,"%s %s %lu",name,email,&phone)!=EOF)
+	{
+		if(strcmp(name,name)==0)
+		{
+				printf("RECORD FOUND");
+		
+			printf("%s%s%lu\n",name,email,phone);	
+		
+		
+				fp=fopen("phpadmission.txt","w");	
+				strcpy(name,"null");
+				strcpy(email,"null");
+				
+		fprintf(fp,"%s\n%s\n%lu\n",name,email,phone);
+		
+				printf("RECORD deleted");
+				
+			}
+			else
+			{
+				printf("REC  not found");
+			}
+		}
+		fclose(fp);
+	fclose(fp);
+}
+void phpdelt()
+{
+	FILE *fp;
+	char name[30],phone[20],email[20];
+	
+	fp=fopen(".netadmission.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("Cannot open file\n\n");
+	}
+	printf("Enter person name whose rec u want to delete\n\n");
+	scanf("%s",name);
+	
+	
+	while(fscanf(fp,"%s %s %lu",name,email,&phone)!=EOF)
+	{
+		if(strcmp(name,name)==0)
+		{
+				printf("RECORD FOUND");
+		
+			printf("%s%s%lu\n",name,email,phone);	
+		
+		
+				fp=fopen(".netadmission.txt","w");	
+				strcpy(name,"null");
+				strcpy(email,"null");
+				
+		fprintf(fp,"%s\n%s\n%lu\n",name,email,phone);
+		
+				printf("RECORD deleted");
+				
+			}
+			else
+			{
+				printf("REC  not found");
+			}
+		}
+		fclose(fp);
+	fclose(fp);
+	
+}
+ void javaupdat()
+ {
+ 	FILE *fp;
+ 	char name[30],email[20],phone[20];
+	
+	fp=fopen("javaadmission.txt","r+");
+	
+	if(fp==NULL)
+	{
+		printf("Cannot open file\n");
+	}
+	printf(" Enter person name whose rec u want to update\n\n");
+	scanf("%s",name);
+	
+	
+	while(fscanf(fp,"%s %s %lu",name,email,&phone)!=EOF)
+	{
+		if(strcmp(name,name)==0)
+		{
+				printf("RECORD FOUND");
+		
+			printf("%s%s%lu\n",name,email,phone);
+			 
+			printf("Enter field name which u want to update\n\n");
+			scanf("%s",email);
+				
+			
+			if(strcmp(email,"email")==0)
+			{
+				printf("Enter new data\n");
+				
+				scanf("%s",email);
+				fp=fopen("javaadmission.txt","w");	
+		fprintf(fp,"%s\n%s\n%lu\n",name,email,phone);
+		
+				printf("RECORD UPDATE'D\n");
+				
+			}
+			else
+			{
+				printf("REC  not found\n");
+			}
+		}
+	}	
+	fclose(fp);
+	
+ }
+ void phpupdat()
+ {
+ 	
+ }
+ void netupdat()
+ {
+ 	
+ }
